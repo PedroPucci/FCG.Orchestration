@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/docker/" />
+  <Folder Name="/docs/" />
+  <Folder Name="/gateway/" />
+  <Folder Name="/k8s/" />
+  <Folder Name="/monitoring/" />
+</Solution>
