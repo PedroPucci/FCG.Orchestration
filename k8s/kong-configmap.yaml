@@ -17,21 +17,81 @@ data:
             secret: EAA4Cf4JnqYwBP9MSZC8cHvMSvmShHZBU27qQxZBS3ORNSoIdEz3me0QHZABLNBiEWtDmVLZBVeMF8QZCd
 
     services:
-      - name: users-api
+
+      # =========================
+      # AUTH - PÚBLICO
+      # =========================
+      - name: auth-api
+        protocol: http
+        host: users-api.fcg.svc.cluster.local
+        port: 80
+        path: /api/auth
+
+        routes:
+          - name: auth-login-route
+            paths:
+              - /auth
+            strip_path: true
+            methods:
+              - POST
+
+      # =========================
+      # USERS - PÚBLICO
+      # Cadastro e atualização
+      # =========================
+      - name: users-public-api
         protocol: http
         host: users-api.fcg.svc.cluster.local
         port: 80
         path: /api/users
+
         routes:
-          - name: users-api-route
+          - name: users-public-post-route
             paths:
               - /users
             strip_path: true
+            methods:
+              - POST
 
+          - name: users-public-put-route
+            paths:
+              - /users
+            strip_path: true
+            methods:
+              - PUT
+
+      # =========================
+      # USERS - PROTEGIDO
+      # =========================
+      - name: users-protected-api
+        protocol: http
+        host: users-api.fcg.svc.cluster.local
+        port: 80
+        path: /api/users
+
+        routes:
+          - name: users-protected-route
+            paths:
+              - /users
+            strip_path: true
+            methods:
+              - GET
+              - DELETE
+            plugins:
+              - name: jwt
+                config:
+                  key_claim_name: iss
+                  claims_to_verify:
+                    - exp
+
+      # =========================
+      # CATALOG - PROTEGIDO
+      # =========================
       - name: catalog-api
         protocol: http
         host: catalog-api.fcg.svc.cluster.local
         port: 80
+
         routes:
           - name: catalog-api-route
             paths:
