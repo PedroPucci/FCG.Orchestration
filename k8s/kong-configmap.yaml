@@ -9,6 +9,13 @@ data:
     _format_version: "3.0"
     _transform: true
 
+    consumers:
+      - username: fcg-user
+        jwt_secrets:
+          - key: PedroIghor
+            algorithm: HS256
+            secret: EAA4Cf4JnqYwBP9MSZC8cHvMSvmShHZBU27qQxZBS3ORNSoIdEz3me0QHZABLNBiEWtDmVLZBVeMF8QZCd
+
     services:
       - name: users-api
         protocol: http
@@ -30,3 +37,9 @@ data:
             paths:
               - /catalog
             strip_path: true
+            plugins:
+              - name: jwt
+                config:
+                  key_claim_name: iss
+                  claims_to_verify:
+                    - exp

@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\pedro\\OneDrive\\Documentos\\projetos\\FCG.Orchestration\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{C38ABD13-63B6-422A-B104-EBA8D15F4A7A}|NewFolder1{C38ABD13-63B6-422A-B104-EBA8D15F4A7A}|C:\\Users\\pedro\\OneDrive\\Documentos\\projetos\\FCG.Orchestration\\k8s\\kong-configmap.yaml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
-      "RelativeMoniker": "D:0:0:{C38ABD13-63B6-422A-B104-EBA8D15F4A7A}|NewFolder1{C38ABD13-63B6-422A-B104-EBA8D15F4A7A}|solutionrelative:k8s\\kong-configmap.yaml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B97CBDD0-8805-4375-88E6-CCEA147436BE}|NewFolder1{B97CBDD0-8805-4375-88E6-CCEA147436BE}|C:\\Users\\pedro\\OneDrive\\Documentos\\projetos\\FCG.Orchestration\\gateway\\kong\\kong.yaml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
-      "RelativeMoniker": "D:0:0:{B97CBDD0-8805-4375-88E6-CCEA147436BE}|NewFolder1{B97CBDD0-8805-4375-88E6-CCEA147436BE}|solutionrelative:gateway\\kong\\kong.yaml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,37 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "kong-configmap.yaml",
-              "DocumentMoniker": "C:\\Users\\pedro\\OneDrive\\Documentos\\projetos\\FCG.Orchestration\\k8s\\kong-configmap.yaml",
-              "RelativeDocumentMoniker": "k8s\\kong-configmap.yaml",
-              "ToolTip": "C:\\Users\\pedro\\OneDrive\\Documentos\\projetos\\FCG.Orchestration\\k8s\\kong-configmap.yaml",
-              "RelativeToolTip": "k8s\\kong-configmap.yaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-09-11T02:03:15.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "kong.yaml",
-              "DocumentMoniker": "C:\\Users\\pedro\\OneDrive\\Documentos\\projetos\\FCG.Orchestration\\gateway\\kong\\kong.yaml",
-              "RelativeDocumentMoniker": "gateway\\kong\\kong.yaml",
-              "ToolTip": "C:\\Users\\pedro\\OneDrive\\Documentos\\projetos\\FCG.Orchestration\\gateway\\kong\\kong.yaml",
-              "RelativeToolTip": "gateway\\kong\\kong.yaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-09-11T02:02:42.228Z",
-              "EditorCaption": ""
             }
           ]
         }
