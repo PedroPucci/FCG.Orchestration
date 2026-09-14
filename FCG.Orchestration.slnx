@@ -1,7 +1,17 @@
 <Solution>
   <Folder Name="/docker/" />
-  <Folder Name="/docs/" />
+  <Folder Name="/docs/">
+    <File Path="docs/architecture.md" />
+  </Folder>
   <Folder Name="/gateway/" />
-  <Folder Name="/k8s/" />
+  <Folder Name="/gateway/kong/">
+    <File Path="gateway/kong/kong.yaml" />
+  </Folder>
+  <Folder Name="/k8s/">
+    <File Path="k8s/kong-configmap.yaml" />
+    <File Path="k8s/kong-deployment.yaml" />
+    <File Path="k8s/kong-service.yaml" />
+    <File Path="redis-deployment.yaml" />
+  </Folder>
   <Folder Name="/monitoring/" />
 </Solution>

@@ -1,0 +1,22 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+  - name: users-api
+    protocol: http
+    host: users-api.fcg.svc.cluster.local
+    port: 80
+    path: /api/users
+    routes:
+      - name: users-api-route
+        paths:
+          - /users
+        strip_path: true
+
+  - name: catalog-api
+    url: http://catalog-api.fcg.svc.cluster.local:80
+    routes:
+      - name: catalog-api-route
+        paths:
+          - /catalog
+        strip_path: true
