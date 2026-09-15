@@ -133,3 +133,105 @@ As instruções completas para execução da plataforma serão adicionadas confo
 ## Tech Challenge
 
 Projeto desenvolvido como parte da Pós-Graduação em Arquitetura de Sistemas .NET da FIAP.
+
+# Fase 3 — Kubernetes e API Gateway
+
+O projeto FCG.Orchestration centraliza os recursos utilizados para executar a plataforma FCG em Kubernetes.
+
+## Kubernetes
+
+O ambiente utiliza Minikube com o namespace:
+
+```text
+fcg
+
+Principais componentes:
+
+fcg
+├── UsersAPI
+├── Users SQL Server
+├── CatalogAPI
+├── Catalog MongoDB
+├── Catalog SQL Server
+├── RabbitMQ
+├── Redis
+└── Kong
+Kong API Gateway
+
+O Kong é utilizado como API Gateway da plataforma.
+
+Foram configurados:
+
+Deployment;
+Service;
+ConfigMap;
+rotas para os microsserviços;
+autenticação JWT para endpoints protegidos.
+Rotas
+UsersAPI
+
+Login:
+
+/auth/login
+CatalogAPI
+
+Rota:
+
+/catalog
+
+Exemplo:
+
+/catalog/api/game-catalog/2
+Autenticação JWT
+
+O login é realizado pelo UsersAPI.
+
+O JWT retornado pelo UsersAPI é utilizado nas chamadas protegidas através do Kong.
+
+Fluxo:
+
+Cliente
+   │
+   ▼
+Kong
+   │
+   ├── /auth/login ──► UsersAPI
+   │                      │
+   │                      ▼
+   │                     JWT
+   │
+   └── /catalog ───────► CatalogAPI
+                          │
+                          ▼
+                       MongoDB
+
+Uma chamada protegida sem JWT retorna:
+
+401 Unauthorized
+
+Uma chamada com JWT válido é encaminhada para o serviço de destino.
+
+Configuração do Kong
+
+Arquivo principal:
+
+k8s/kong-configmap.yaml
+
+Aplicação da configuração:
+
+kubectl apply -f .\k8s\kong-configmap.yaml
+
+Reinicialização do Kong:
+
+kubectl rollout restart deployment kong -n fcg
+
+Verificação dos Pods:
+
+kubectl get pods -n fcg
+Acesso local
+
+O Kong pode ser exposto através do Minikube:
+
+minikube service kong -n fcg --url
+
+A URL retornada pelo comando é utilizada para acessar o API Gateway localmente.
